@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".main.VehiclesFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:drawable/divider_horizontal_textfield"
+            android:orientation="horizontal">
+
+
+            <Button
+                android:id="@+id/showlog2"
+                android:layout_width="35dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@android:drawable/dialog_holo_light_frame"
+                android:foreground="@android:drawable/ic_lock_lock"
+                android:onClick="showlog" />
+
+            <EditText
+                android:id="@+id/StudentFio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:drawable/alert_light_frame"
+                android:ems="10"
+                android:hint="имя студента"
+                android:inputType="textPersonName"
+                android:padding="15dp" />
+
+            <Button
+                android:id="@+id/AddStudent"
+                android:layout_width="wrap_content"
+                android:layout_height="54dp"
+                android:layout_weight="1"
+                android:onClick="Add"
+                android:text="Добавить" />
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/vehicle_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:spanCount="2"
+            tools:listitem="@layout/item_vehicle" />
+
+    </LinearLayout>
+
+</FrameLayout>
